@@ -13,10 +13,14 @@ public class Stock {
         return price;
     }
 
+    public String getSymbol() {
+      return symbol;
+    }
+
     public void setPrice(float price) {
-        if (this.price != price) {
-            this.price = price;
-        }
+      if (this.price != price) {
+          this.price = price;
+      }
     }
 
     @Override
