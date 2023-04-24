@@ -14,9 +14,10 @@ public class Subject {
     observers.remove(observer);
   }
 
-  public void notifyObservers() {
+  // should use Generic or Object as parameter type?
+  public void notifyObservers(int value) {
     for (DataSourceObserver observer : observers) {
-      observer.update();
+      observer.update(value);
     }
   }
 }
