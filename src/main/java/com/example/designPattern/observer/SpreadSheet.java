@@ -8,8 +8,8 @@ public class SpreadSheet implements DataSourceObserver {
   }
 
   @Override
-  public void update() {
-    System.out.println("SpreadSheet got notified: " + dataSource.getValue());
+  public void update(int value) {
+    System.out.println("SpreadSheet got notified: " + value);
   }
 }
 

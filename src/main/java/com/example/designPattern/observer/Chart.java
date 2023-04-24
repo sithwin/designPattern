@@ -8,7 +8,7 @@ public class Chart implements DataSourceObserver  {
   }
 
   @Override
-  public void update() {
-    System.out.println("Chart got notified: " + dataSource.getValue());
+  public void update(int value) {
+    System.out.println("Chart got notified: " + value);
   }
 }

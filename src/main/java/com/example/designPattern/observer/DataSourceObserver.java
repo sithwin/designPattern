@@ -1,5 +1,5 @@
 package com.example.designPattern.observer;
 
 public interface DataSourceObserver {
-  void update();
+  void update(int value);
 }
