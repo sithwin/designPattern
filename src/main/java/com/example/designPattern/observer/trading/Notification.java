@@ -14,8 +14,11 @@ public class Notification {
     observers.remove(observer);
   }
 
-  public void notifyObserver() {
+  public void notifyObserver(String event, Stock stock) {
     for (var observer: observers)
-      observer.priceChanged();
+      if (event.equals("add"))
+        observer.addStock(stock);
+      else if (event.equals("priceChanged"))
+        observer.priceChanged(stock);
   }
 }
