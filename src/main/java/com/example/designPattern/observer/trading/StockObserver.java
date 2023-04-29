@@ -1,5 +1,6 @@
 package com.example.designPattern.observer.trading;
 
 public interface StockObserver {
-  void priceChanged();
+  void addStock(Stock stock);
+  void priceChanged(Stock stock);
 }
