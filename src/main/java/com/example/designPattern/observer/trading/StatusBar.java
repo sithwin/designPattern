@@ -3,7 +3,7 @@ package com.example.designPattern.observer.trading;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatusBar {
+public class StatusBar implements StockObserver {
   private List<Stock> stocks = new ArrayList<>();
 
   public void addStock(Stock stock) {
@@ -15,15 +15,14 @@ public class StatusBar {
       System.out.println(stock);
   }
 
-  public static class TradingMain {
-    public static void main(String[] args) {
-      StatusBar statusBar = new StatusBar();
-      StockListView stockListView = new StockListView();
+  @Override
+  public void priceChanged(Stock stock) {
+    System.out.println("Price Changed - Refreshing StatusBar");
+    stocks.stream()
+        .filter(s -> s.getSymbol().equals(stock.getSymbol()))
+        .findFirst()
+        .ifPresent(s -> s.setPrice(stock.getPrice()));
 
-      Stock stock1 = new Stock("stock1", 10);
-      stock1.setPrice(11);
-
-
-    }
+    show();
   }
 }
