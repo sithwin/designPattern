@@ -1,7 +1,7 @@
 package com.example.designPattern.observer.trading;
 
 public class Stock {
-  private String symbol;
+  private final String symbol;
     private float price;
 
     public Stock(String symbol, float price) {
